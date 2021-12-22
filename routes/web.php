@@ -5,13 +5,14 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Application;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\MitraController;
 use App\Http\Controllers\VideoController;
+use App\Http\Controllers\DoctorController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\CategoryController;
-use App\Http\Controllers\DoctorController;
 use App\Http\Controllers\FacilityController;
-use App\Http\Controllers\MitraController;
 use App\Http\Controllers\SpecialityController;
+use App\Http\Controllers\LandingPageController;
 use App\Http\Controllers\PatientDutyController;
 use App\Http\Controllers\PatientRightController;
 
@@ -71,6 +72,9 @@ Route::resource('category', CategoryController::class);
 Route::resource('duty', PatientDutyController::class);
 Route::resource('right', PatientRightController::class);
 Route::resource('speciality', SpecialityController::class);
+
+Route::get('/', [LandingPageController::class, 'index'])->name('landingpage.index');
+
 
 
 // Route::post('formSubmit', 'ImageController@formSubmit');
