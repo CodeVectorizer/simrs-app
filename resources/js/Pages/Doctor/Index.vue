@@ -62,7 +62,6 @@
                       <td>{{ row.name }}</td>
                       <td>{{ row.speciality.speciality }}</td>
                       <td>
-                        {{ row.avatar }}
                         <img
                           v-if="row.avatar"
                           class="mb-3"

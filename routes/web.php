@@ -11,6 +11,7 @@ use App\Http\Controllers\DoctorController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\FacilityController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\SpecialityController;
 use App\Http\Controllers\LandingPageController;
 use App\Http\Controllers\PatientDutyController;
@@ -75,6 +76,6 @@ Route::resource('speciality', SpecialityController::class);
 
 Route::get('/', [LandingPageController::class, 'index'])->name('landingpage.index');
 
-
+Route::get('/dashboard2', [DashboardController::class, 'index'])->name('dashboard.index');
 
 // Route::post('formSubmit', 'ImageController@formSubmit');

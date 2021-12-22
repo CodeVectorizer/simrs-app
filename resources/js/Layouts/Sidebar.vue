@@ -70,13 +70,11 @@
           </ul>
         </li>
 
-        <li class="">
-          <inertia-link class="nav-link" href="blank.html"
-            ><i class="fas fa-user-md"></i
-            ><span>Data Dokter</span></inertia-link
+        <li :class="{ active: $page.component.startsWith('Doctor') }">
+          <inertia-link class="nav-link" :href="this.route('doctor.index')"
+            ><i class="far fa-user"></i><span>Data Dokter</span></inertia-link
           >
         </li>
-
         <li :class="{ active: $page.component.startsWith('User') }">
           <inertia-link class="nav-link" :href="this.route('user.index')"
             ><i class="far fa-user"></i><span>Data User</span></inertia-link

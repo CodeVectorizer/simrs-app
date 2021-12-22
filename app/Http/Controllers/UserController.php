@@ -125,7 +125,7 @@ class UserController extends Controller
 
         if ($request->file('avatar')) {
             $folderDir = 'img/user/avatar';
-            if (File::exists(public_path($user->avatar))) {
+            if (File::exists(public_path($user->avatar)) && $user->avatar != null) {                
                 unlink(public_path($user->avatar));
             }
 
