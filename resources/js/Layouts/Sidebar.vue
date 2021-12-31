@@ -67,6 +67,11 @@
                 >Data Video</inertia-link
               >
             </li>
+            <li :class="{ active: $page.component.startsWith('Faq') }">
+              <inertia-link class="nav-link" :href="this.route('faq.index')"
+                >Data Faq</inertia-link
+              >
+            </li>
           </ul>
         </li>
 
@@ -78,20 +83,6 @@
         <li :class="{ active: $page.component.startsWith('User') }">
           <inertia-link class="nav-link" :href="this.route('user.index')"
             ><i class="far fa-user"></i><span>Data User</span></inertia-link
-          >
-        </li>
-
-        <li class="">
-          <inertia-link class="nav-link" href="blank.html"
-            ><i class="far fa-envelope"></i
-            ><span>Data Pesan</span></inertia-link
-          >
-        </li>
-
-        <li class="">
-          <inertia-link class="nav-link" href="blank.html"
-            ><i class="fas fa-exclamation"></i
-            ><span>Laporan Permintaan</span></inertia-link
           >
         </li>
 
