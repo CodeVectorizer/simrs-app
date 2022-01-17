@@ -13,10 +13,12 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\FacilityController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\FaqController;
+use App\Http\Controllers\InformationController;
 use App\Http\Controllers\SpecialityController;
 use App\Http\Controllers\LandingPageController;
 use App\Http\Controllers\PatientDutyController;
 use App\Http\Controllers\PatientRightController;
+use App\Http\Controllers\TestimonialController;
 
 /*
 |--------------------------------------------------------------------------
@@ -55,6 +57,14 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::post('facility/upload', [FacilityController::class, 'upload'])->name('facility.upload');
     Route::post('facility/update/${id}', [FacilityController::class, 'update'])->name('facility.update');
 
+    Route::resource('testimonial', TestimonialController::class);
+    Route::post('testimonial/upload', [TestimonialController::class, 'upload'])->name('testimonial.upload');
+    Route::post('testimonial/update/${id}', [TestimonialController::class, 'update'])->name('testimonial.update');
+
+    Route::resource('information', InformationController::class);
+    Route::post('information/upload', [InformationController::class, 'upload'])->name('information.upload');
+    Route::post('information/update/${id}', [InformationController::class, 'update'])->name('information.update');
+
     Route::resource('mitra', MitraController::class);
     Route::post('mitra/upload', [MitraController::class, 'upload'])->name('mitra.upload');
     Route::post('mitra/update/${id}', [MitraController::class, 'update'])->name('mitra.update');
@@ -81,6 +91,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
 Route::get('/', [LandingPageController::class, 'index'])->name('landingpage.index');
 
-Route::get('/dashboard2', [DashboardController::class, 'index'])->name('dashboard.index');
+Route::get('/', [DashboardController::class, 'index'])->name('dashboard.index');
+Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard.index');
 
 // Route::post('formSubmit', 'ImageController@formSubmit');

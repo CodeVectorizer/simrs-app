@@ -11,7 +11,7 @@
           <div class="card">
             <div class="card-header">
               <h4>Table Kategori</h4>
-              <div class="card-header-form mr-2">
+              <div class="mr-2 card-header-form">
                 <form>
                   <div class="input-group">
                     <input
@@ -52,7 +52,7 @@
                       <td>{{ index + 1 }}</td>
                       <td>{{ row.category }}</td>
                       <td>
-                        <button @click="edit(row)" class="btn btn-primary mr-1">
+                        <button @click="edit(row)" class="mr-1 btn btn-primary">
                           <i class="fas fa-edit"></i>
                         </button>
                         <button

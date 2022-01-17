@@ -109,12 +109,12 @@
         </li>
       </ul>
 
-      <div class="mt-4 mb-4 p-3 hide-sidebar-mini">
+      <div class="p-3 mt-4 mb-4 hide-sidebar-mini">
         <inertia-link
-          href="https://getstisla.com/docs"
+          :href="route('information.edit', 1)"
           class="btn btn-primary btn-lg btn-block btn-icon-split"
         >
-          <i class="fas fa-rocket"></i> Documentation
+          <i class="fas fa-rocket"></i> Informasi
         </inertia-link>
       </div>
     </aside>

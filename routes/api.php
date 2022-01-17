@@ -6,11 +6,13 @@ use App\Models\Doctor;
 use App\Models\Facility;
 use App\Models\Faq;
 use App\Models\Gallery;
+use App\Models\Information;
 use App\Models\Mitra;
 use App\Models\PatientDuty;
 use App\Models\PatientRight;
 use App\Models\Post;
 use App\Models\Speciality;
+use App\Models\Testimonial;
 use App\Models\Video;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -58,6 +60,22 @@ Route::prefix('v1')->group(function () {
             $item->image = asset($item->image);
         });
         return $facility;
+    });
+
+    Route::get('information/', function () {
+        $information = Information::all();
+        $information->map(function ($item, $key) {
+            $item->bg_image = asset($item->bg_image);
+        });
+        return $information;
+    });
+
+    Route::get('testimonial/', function () {
+        $testimonial = Testimonial::all();
+        $testimonial->map(function ($item, $key) {
+            $item->photo = asset($item->pohto);
+        });
+        return $testimonial;
     });
 
     Route::get('mitra/', function () {

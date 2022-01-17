@@ -184,32 +184,7 @@ $(function() {
     }
   }
 
-  $("[data-toggle='sidebar']").click(function() {
-    var body = $("body"),
-      w = $(window);
-
-    if(w.outerWidth() <= 1024) {
-      body.removeClass('search-show search-gone');
-      if(body.hasClass('sidebar-gone')) {
-        body.removeClass('sidebar-gone');
-        body.addClass('sidebar-show');
-      }else{
-        body.addClass('sidebar-gone');
-        body.removeClass('sidebar-show');
-      }
-
-      update_sidebar_nicescroll();
-    }else{
-      body.removeClass('search-show search-gone');
-      if(body.hasClass('sidebar-mini')) {
-        toggle_sidebar_mini(false);
-      }else{
-        toggle_sidebar_mini(true);
-      }
-    }
-
-    return false;
-  });
+  
 
   var toggleLayout = function() {
     var w = $(window),
